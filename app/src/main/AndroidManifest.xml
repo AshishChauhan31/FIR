@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PoliceOptions"></activity>
+        <activity android:name=".RejectReports"></activity>
+        <activity android:name=".ProcessReports" />
+        <activity android:name=".NewReports" />
+        <activity android:name=".PoliceOptions" />
         <activity android:name=".PoliceLogin" />
         <activity android:name=".MainActivity">
             <intent-filter>
