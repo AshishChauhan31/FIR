@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/firbk"
-    >
+    tools:context=".VictimOptions"
+    android:background="@drawable/cap">
 
     <ScrollView
         android:layout_width="0dp"
@@ -21,47 +20,48 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <Button
-                android:id="@+id/btnPolice"
+                android:id="@+id/btnNewReport"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:background="@drawable/mybutton"
                 android:padding="4dp"
-                android:text="Police Login"
+                android:text="Write New Report"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnVictim"
+                android:id="@+id/btnViewReport"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:background="@drawable/mybutton"
                 android:padding="4dp"
-                android:text="Victim Login"
+                android:text="View Existing Report"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnReport"
+                android:id="@+id/btnCancelReport"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:background="@drawable/mybutton"
                 android:padding="4dp"
-                android:text="View Crime Report"
+                android:text="Cancel Existing Report"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
