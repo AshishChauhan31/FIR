@@ -12,7 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RejectReports"></activity>
+        <activity android:name=".VictimLogin"></activity>
+        <activity android:name=".ReportsTable" />
+        <activity android:name=".ReportsDetailsDialog" />
+        <activity android:name=".ReportsActivity" />
+        <activity android:name=".ReportDetailsDia2" />
+        <activity android:name=".ReportDetailsDia1" />
+        <activity android:name=".RejectReports" />
         <activity android:name=".ProcessReports" />
         <activity android:name=".NewReports" />
         <activity android:name=".PoliceOptions" />
