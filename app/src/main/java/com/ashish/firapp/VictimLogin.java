@@ -45,7 +45,7 @@ public class VictimLogin extends AppCompatActivity {
 
                         if (loginId.getText().toString().equals(sID)&&pass.getText().toString().equals(sPin))
                         {
-                            // Toast.makeText(getApplicationContext(),"Login Successfull!",Toast.LENGTH_SHORT).show();
+                             Toast.makeText(getApplicationContext(),"Login Successfull!",Toast.LENGTH_SHORT).show();
                             Intent intent=new Intent(VictimLogin.this,VictimOptions.class);
                             startActivity(intent);
                         }

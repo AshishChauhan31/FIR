@@ -70,11 +70,11 @@ public class NewReports extends AppCompatActivity {
             }
         });
 
-        /*databaseReference.addChildEventListener(new ChildEventListener() {
+        databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                String value=ds.getKey();
+                String value=dataSnapshot.getKey();
                     list.add(value);
                     arrayAdapter.notifyDataSetChanged();
             }
@@ -102,7 +102,7 @@ public class NewReports extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),databaseError.getMessage(),Toast.LENGTH_LONG).show();
 
             }
-        });*/
+        });
 //                Toast.makeText(getApplicationContext(),databaseError.getMessage(),Toast.LENGTH_LONG).show();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">FIRApp</string>
+    <string-array name="sunoff">
+        <item>S/O</item>
+        <item>W/O</item>
+        <item>D/O</item>
+        <item>C/O</item>
+    </string-array>
+
+    <string-array name="district">
+        <item>BHUTESWAR</item>
+        <item>KOSI</item>
+        <item>GOVERDHAN</item>
+        <item>MATHURA</item>
+        <item>VRINDAVAN</item>
+    </string-array>
+
+    <string-array name="policeChoki">
+        <item>Thana Deeng Gate</item>
+        <item>MasaniPolice Chowki</item>
+        <item>Thana Holi Gate</item>
+        <item>Thana GovindNagar</item>
+    </string-array>
+
+    <string-array name="firType">
+        <item>Stolen</item>
+        <item>Lost</item>
+        <item>Attack</item>
+        <item>Rape</item>
+        <item>Murder</item>
+    </string-array>
+
 </resources>

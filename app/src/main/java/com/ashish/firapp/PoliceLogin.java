@@ -30,7 +30,7 @@ public class PoliceLogin extends AppCompatActivity {
             public void onClick(View v) {
                 if (id.getText().toString().equals("policestation")&&pin.getText().toString().equals("police"))
                 {
-                    //  Toast.makeText(getApplicationContext(),"Login Successfull!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Login Successfull!",Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(PoliceLogin.this,PoliceOptions.class);
                     startActivity(intent);
 

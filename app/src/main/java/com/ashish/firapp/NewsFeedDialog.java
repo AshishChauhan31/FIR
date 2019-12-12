@@ -1,8 +1,7 @@
 package com.ashish.firapp;
 
-import android.content.Intent;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,34 +13,39 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-public class ExistingReport extends AppCompatActivity {
-    private Button cSataus;
-    private TextView tvCD1,tvCD2,tvCD3,tvCD4,tvCD5,tvPO1,tvPO2,tvPO3,tvPO4,tvPO5,tvPO6,tvAF1,tvAF2,tvAF3;
+public class NewsFeedDialog extends AppCompatActivity {
+    private Button rejectBtn,actionBtn;
     private DatabaseReference databaseFirstRef;
-    public static String chkStatus="";
+    private TextView tvCD1,tvCD2,tvCD3,tvCD4,tvCD5,tvPO1,tvPO2,tvPO3,tvPO4,tvPO5,tvPO6,tvAF1,tvAF2,tvAF3,tvAF4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_existing_report);
-        cSataus=findViewById(R.id.btnCstatus);
+        setContentView(R.layout.activity_news_feed_dialog);
+
+        Intent intent=getIntent();
+        final String usr=intent.getStringExtra("Complainant Name");
+        rejectBtn=findViewById(R.id.btnReject);
+        actionBtn=findViewById(R.id.btnAction);
+
         tvCD1=findViewById(R.id.tvCname);
         tvCD2=findViewById(R.id.tvCname2);
         tvCD3=findViewById(R.id.tvCaddress);
-        tvCD4=findViewById(R.id.tvMail);
-        tvCD5=findViewById(R.id.tvMob);
+        //  tvCD4=findViewById(R.id.tvMail);
+        //  tvCD5=findViewById(R.id.tvMob);
         tvPO1=findViewById(R.id.tvPlace);
         tvPO2=findViewById(R.id.tvCity);
         tvPO3=findViewById(R.id.tvThana);
         tvPO4=findViewById(R.id.tvDate);
         tvPO5=findViewById(R.id.tvTime);
-        tvPO6=findViewById(R.id.tvFact);
+        //   tvPO6=findViewById(R.id.tvFact);
         tvAF1=findViewById(R.id.tvCtype);
         tvAF2=findViewById(R.id.tvCagainst);
-        tvAF3=findViewById(R.id.tvDescription);
+        //   tvAF3=findViewById(R.id.tvDescription);
+        tvAF4=findViewById(R.id.tvCstatus);
 
-        databaseFirstRef= FirebaseDatabase.getInstance().getReference().child("Reports Table").child(VictimLogin.sID);
+
+        databaseFirstRef= FirebaseDatabase.getInstance().getReference().child("Reports Table").child(usr);
 
         databaseFirstRef.addListenerForSingleValueEvent(new ValueEventListener()
         {
@@ -52,33 +56,34 @@ public class ExistingReport extends AppCompatActivity {
                 String value1=dataSnapshot.child("cName").getValue(String.class);
                 String value2=dataSnapshot.child("cName2").getValue(String.class);
                 String value3=dataSnapshot.child("cAddress").getValue(String.class);
-                String value4=dataSnapshot.child("cMail").getValue(String.class);
-                String value5=dataSnapshot.child("cMob").getValue(String.class);
+                //  String value4=dataSnapshot.child("cMail").getValue(String.class);
+                //  String value5=dataSnapshot.child("cMob").getValue(String.class);
                 String value6=dataSnapshot.child("place").getValue(String.class);
                 String value7=dataSnapshot.child("city").getValue(String.class);
                 String value8=dataSnapshot.child("thana").getValue(String.class);
                 String value9=dataSnapshot.child("date").getValue(String.class);
                 String value10=dataSnapshot.child("time").getValue(String.class);
-                String value11=dataSnapshot.child("facts").getValue(String.class);
+                //   String value11=dataSnapshot.child("facts").getValue(String.class);
                 String value12=dataSnapshot.child("cFor").getValue(String.class);
                 String value13=dataSnapshot.child("cAgainst").getValue(String.class);
-                String value14=dataSnapshot.child("discription").getValue(String.class);
-                chkStatus=dataSnapshot.child("Status").getValue(String.class);
+                //   String value14=dataSnapshot.child("discription").getValue(String.class);
+                String value15=dataSnapshot.child("Status").getValue(String.class);
 
                 tvCD1.setText(value1);
                 tvCD2.setText(value2);
                 tvCD3.setText(value3);
-                tvCD4.setText(value4);
-                tvCD5.setText(value5);
+                //   tvCD4.setText(value4);
+                //   tvCD5.setText(value5);
                 tvPO1.setText(value6);
                 tvPO2.setText(value7);
                 tvPO3.setText(value8);
                 tvPO4.setText(value9);
                 tvPO5.setText(value10);
-                tvPO6.setText(value11);
+                //    tvPO6.setText(value11);
                 tvAF1.setText(value12);
                 tvAF2.setText(value13);
-                tvAF3.setText(value14);
+                //   tvAF3.setText(value14);
+                tvAF4.setText(value15);
 
 
             }
@@ -91,33 +96,5 @@ public class ExistingReport extends AppCompatActivity {
         });
 
 
-        cSataus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //  Toast.makeText(getApplicationContext(),"Currently not available!",Toast.LENGTH_LONG).show();
-                if (chkStatus.equals("REJECTED")){
-                    showmsg("FIR STATUS","Your report has been rejected!");
-                }
-                else if (chkStatus.equals("FORWARDED")) {
-                    showmsg("FIR STATUS","Your report has been forwarded!");
-
-                }else {
-                    showmsg("FIR STATUS","Your report did't seen by police!");
-                }
-
-            }
-        });
-
-
-    }
-
-    public void showmsg(String title, String msg)
-    {
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(msg);
-        builder.show();
     }
 }
-
