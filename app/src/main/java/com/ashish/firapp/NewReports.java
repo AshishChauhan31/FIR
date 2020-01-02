@@ -30,7 +30,7 @@ public class NewReports extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_reports);
         listView=findViewById(R.id.myListView);
-        arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,list);
+        arrayAdapter= new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, list);
         listView.setAdapter(arrayAdapter);
         databaseReference= FirebaseDatabase.getInstance().getReference().child("Reports Table");
 
@@ -52,7 +52,7 @@ public class NewReports extends AppCompatActivity {
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                String value=dataSnapshot.getValue(String.class);
+               String value=dataSnapshot.getValue(String.class);
                 list.remove(value);
                 arrayAdapter.notifyDataSetChanged();
 

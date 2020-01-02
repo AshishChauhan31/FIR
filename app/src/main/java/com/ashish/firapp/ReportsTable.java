@@ -1,7 +1,7 @@
 package com.ashish.firapp;
 
 public class ReportsTable {
-    String cName,cName2,cAddress,cMail,cMob,place,city,thana,date,time,facts,cFor,cAgainst,discription,Status;
+    public String cName,cName2,cAddress,cMail,cMob,place,city,thana,date,time,facts,cFor,cAgainst,discription,Status;
     public ReportsTable(String A, String B, String C, String D, String E, String F, String G, String H, String I, String J, String K, String L, String M, String N) {
         this.cName = A;
         this.cName2 = B;
